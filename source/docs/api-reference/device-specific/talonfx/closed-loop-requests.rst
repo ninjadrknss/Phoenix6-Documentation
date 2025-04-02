@@ -42,7 +42,7 @@ It may be useful to switch between presets of gains in a motor controller, so th
 Gravity Feedforward
 -------------------
 
-The gravity feedforward :math:`K_g` is the output necessary to overcome gravity, in units of the :ref:`control output type <docs/api-reference/device-specific/talonfx/talonfx-control-intro:control output types>`. Phoenix 6 supports the two most common use cases for :math:`K_g`---elevators and arms---using the ``GravityType`` config in the gain slots.
+The gravity feedforward :math:`K_g` is the output necessary to overcome gravity, in units of the :ref:`control output type <docs/api-reference/device-specific/talonfx/talonfx-control-intro:control output types>`. Phoenix 6 supports the two most common use cases for :math:`K_g`---elevators and arms---using the ``GravityType`` config in the gain slots. As seperating static friction and gravity is difficult, it is often recommended to find both constants at the same time. This can be done from finding the highest output and lowest output to overcome gravity without the system moving, and then calculated :math:`K_g` as the average of the two, with :math:`K_s` then being half of the difference of the two outputs.
 
 Elevator/Static
 ^^^^^^^^^^^^^^^
